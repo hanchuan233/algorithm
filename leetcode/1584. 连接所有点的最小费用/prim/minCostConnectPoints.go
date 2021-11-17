@@ -40,7 +40,8 @@ func MinCostConnectPoints(points [][]int) int {
 	n := len(points)
 	isVisited := make([]bool, n)
 	pq := PriorityQueue{}
-	//var getEdges func()
+
+	// 将当前点的所有的边放入优先级队列
 	getEdges := func(idx int, point []int) {
 		for i, p := range points {
 			if !isVisited[i] && idx != i {
@@ -53,7 +54,7 @@ func MinCostConnectPoints(points [][]int) int {
 		}
 	}
 
-	// 返回值为未被访问过的点的序号 都被访问过则返回-1
+	// 返回值为未被访问过的点的序号 如果两个点都被访问过则返回-1
 	checkVisited := func(edge Edge) int {
 		if !isVisited[edge.p2] {
 			return edge.p2
