@@ -1,7 +1,6 @@
 package kruskal
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -61,7 +60,7 @@ func (uf *unionFind) Union(x, y int) bool {
 	return true
 }
 
-func minCostConnectPoints(points [][]int) int {
+func MinCostConnectPoints(points [][]int) int {
 	n := len(points)
 	type edge struct {
 		p1   int
@@ -101,8 +100,3 @@ func minCostConnectPoints(points [][]int) int {
 	return sum
 }
 
-func main() {
-	points := [][]int{{0, 0}, {1, 1}, {1, 0}, {-1, 1}}
-	ret := minCostConnectPoints(points)
-	fmt.Print(ret)
-}
