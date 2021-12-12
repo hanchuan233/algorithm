@@ -62,8 +62,7 @@ func multiply(num1 string, num2 string) string {
 	for i := 0; i < len(ret); i++ {
 		ret[i] = ret[i] + '0'
 	}
-
-	return string(ret)
+	return string(ret[:])
 }
 
 func main() {
